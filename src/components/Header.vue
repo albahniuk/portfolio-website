@@ -16,7 +16,7 @@
 
     <v-toolbar-title>
       <v-img
-        :src="require('../assets/logoA.png')"
+        :src="require('../assets/logo.png')"
         contain
         height="40"
         width="40"
