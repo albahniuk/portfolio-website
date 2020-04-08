@@ -13,15 +13,16 @@
     </template>
 
     <v-app-bar-nav-icon @click.stop="drawer = !drawer" class="d-lg-none"></v-app-bar-nav-icon>
-
     <v-toolbar-title>
-      <v-img
-        :src="require('../assets/logo.png')"
-        contain
-        height="40"
-        width="40"
-        style="border-radius: 100%"
-      />
+      <a href="#top">
+        <v-img
+          :src="require('../assets/logo.png')"
+          contain
+          height="40"
+          width="40"
+          style="border-radius: 100%"
+        />
+      </a>
       <span>Alba López Folgar</span>
     </v-toolbar-title>
 
@@ -80,5 +81,9 @@ export default {
 }
 .v-toolbar__title .v-image {
   margin-right: 10px;
+}
+a {
+  text-decoration: none;
+  color: inherit;
 }
 </style>

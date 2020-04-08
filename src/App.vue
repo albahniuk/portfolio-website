@@ -2,8 +2,8 @@
   <v-app>
     <Header />
     <v-sheet id="scrolling-techniques-2" class="overflow-y-auto" max-height="100vh">
-      <v-container style="margin-top: 128px; max-width: 1200px">
-        <v-content>
+      <v-container style="margin-top: 128px; max-width: 1200px;">
+        <v-content id="top">
           <AboutSection/>
           <ProjectsSection/>
           <ExperienceSection/>
