@@ -50,16 +50,8 @@ export default {
         subtitle: "SWA made with JavaScript",
         hrefCode:
           "https://github.com/albahniuk/e-s2-evaluacion-final-albahniuk",
-        hrefProject: "http://beta.adalab.es/e-s2-evaluacion-final-albahniuk/",
-        background: "code-crushers.png"
-      },
-      {
-        title: "Find the pair",
-        subtitle: "Classic memory game to find the pairs made with JavaSpript",
-        hrefCode:
-          "https://github.com/albahniuk/e-s2-evaluacion-final-bis-albahniuk",
-        hrefProject: "",
-        background: "code-crushers.png"
+        hrefProject: "https://albahniuk.github.io/e-s2-evaluacion-final-albahniuk/",
+        background: "tv-series-searcher.png"
       },
       {
         title: "Harry potter characters searcher",
