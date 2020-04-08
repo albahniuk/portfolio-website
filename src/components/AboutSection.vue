@@ -182,7 +182,7 @@ h2:after {
   left: 0;
 }
 .image-container {
-  background-image: url('../assets/parallax.jpg');
+  background-image: url('../assets/background-about.png');
   background-position: center;
   background-repeat: no-repeat;
   height: 444px;

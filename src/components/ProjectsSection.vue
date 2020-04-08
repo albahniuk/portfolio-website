@@ -102,8 +102,7 @@ h2:after {
   padding-top: 70px;
 }
 .project-container {
-  background-image: linear-gradient(to bottom, #be7617, #c77c1a, #d0831d, #da8920, #e39023);  
-  padding: 20px 70px;
+  background-image: linear-gradient(to bottom, #cd954d, #d79f54, #e1a95b, #eab462, #f4be69);  padding: 20px 70px;
   color: white;
   height: 100%;
 }

@@ -2,7 +2,7 @@
   <v-container>
     <v-row id="contact">
       <v-img style="position: relative; width: 100%"
-        :src="require('../assets/parallaxContact.jpg')"
+        :src="require('../assets/contact-image.png')"
         height="140"
       /> 
       <v-card shaped class="mb-10 card-container">
