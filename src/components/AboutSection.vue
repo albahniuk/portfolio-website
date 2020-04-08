@@ -2,14 +2,14 @@
   <v-container>
     <v-row id="about">
       <v-col cols="12">
-        <h2 class="mb-10 display-2">About</h2>
+        <h2 class="mb-5 display-2">About</h2>
         <v-row class="mb-10">
-          <v-col cols="12" md="6" class="about">
+          <v-col cols="12" md="6" class="about image-container">
             <v-img
               :src="require('../assets/profile.png')"
               class="my-3"
               contain
-              height="350"
+              height="320"
               width="350"
               style="border-radius: 100%"
             />
@@ -18,7 +18,7 @@
             <p>
               Hi! I'm Alba, a Front-End developer based in Madrid.
               <br />I've never stopped engaging my passion to help others and solve problems, before as sociologist and now as web developer.
-              <br />I am passionate about building user‑friendly experiences, paying attention to detail, and I enjoy turning complex problems into simple, keeping learning and continue challenging myself.
+              <br />I am passionate about building user‑friendly experiences, paying attention to detail. I enjoy turning complex problems into simple, keeping learning and continue challenging myself.
               <br />I’m fast learner and self-sufficient. Among the tools I work with are responsibility, empathy and great adaptive capacity.
               <br />When I'm not coding, you'll find me traveling, cooking (and eating), enjoying time with family and friends, reading a book or watching TV series.
             </p>
@@ -33,6 +33,7 @@
             </a>
           </v-col>
         </v-row>
+
         <v-row>
           <v-card shaped class="card-container">
             <v-col cols="12">
@@ -168,6 +169,23 @@ a {
 h2 {
   font-family: "Roboto", sans-serif;
   font-size: 26px;
+  position: relative;
+}
+h2:after {
+  display: block;
+  content: '';
+  width: 58px;
+  height: 4px;
+  background: black;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+.image-container {
+  background-image: url('../assets/parallax.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 444px;
 }
 .v-card__subtitle {
   text-align: left;

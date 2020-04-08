@@ -1,7 +1,7 @@
 <template>
   <v-container>
     <v-row id="experience">
-      <v-col class="mb-10" cols="12">
+      <v-col cols="12">
         <v-row justify="center">
           <v-col cols="12" md="6">
             <h2 class="mb-10 display-2">Education</h2>
@@ -13,10 +13,10 @@
                   :style="`color: ${year.color}`"
                 ></span>
                 <div>
-                  <h2
+                  <h3
                     class="headline font-weight-light mb-4"
                     :style="`color: ${year.color}`"
-                  >{{year.title}}</h2>
+                  >{{year.title}}</h3>
                   <div>{{year.text}}</div>
                 </div>
               </v-timeline-item>
@@ -32,10 +32,10 @@
                   :style="`color: ${year.color}`"
                 ></span>
                 <div>
-                  <h2
+                  <h3
                     class="headline font-weight-light mb-4"
                     :style="`color: ${year.color}`"
-                  >{{year.title}}</h2>
+                  >{{year.title}}</h3>
                   <div>{{year.text}}</div>
                 </div>
               </v-timeline-item>
@@ -107,6 +107,17 @@ export default {
 h2 {
   font-family: "Roboto", sans-serif;
   font-size: 26px;
+  position: relative;
+}
+h2:after {
+ display: block;
+   content: '';
+  width: 58px;
+  height: 4px;
+  background: black;
+  position: absolute;
+  bottom: 0;
+  left: 0;
 }
 .v-card__subtitle {
   text-align: left;

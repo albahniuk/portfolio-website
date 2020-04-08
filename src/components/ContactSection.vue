@@ -1,6 +1,10 @@
 <template>
   <v-container>
     <v-row id="contact">
+      <v-img style="position: relative; width: 100%"
+        :src="require('../assets/parallaxContact.jpg')"
+        height="140"
+      /> 
       <v-card shaped class="mb-10 card-container">
         <v-col cols="12">
           <h2 class="display-2 mb-5">Contact</h2>
@@ -89,6 +93,17 @@ export default {
 h2 {
   font-family: "Roboto", sans-serif;
   font-size: 26px;
+  position: relative;
+}
+h2:after {
+ display: block;
+   content: '';
+  width: 58px;
+  height: 4px;
+  background: black;
+  position: absolute;
+  bottom: 0;
+  left: 0;
 }
 .v-card__subtitle {
   text-align: left;
@@ -99,9 +114,6 @@ h2 {
 #contact button i {
   margin-right: 5px;
   font-size: 18px;
-}
-#contact {
-  padding-top: 70px;
 }
 .card-container {
   padding: 20px;
