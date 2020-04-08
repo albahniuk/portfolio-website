@@ -39,19 +39,25 @@ export default {
   data: () => ({
     projects: [
       {
+        title: "Awesome profile-cards",
+        subtitle: "Interactive web application made with React that allows you to create a personalized business card",
+        hrefCode: "https://github.com/Adalab/easley-s3-codekatchers",
+        hrefProject: "http://beta.adalab.es/easley-s3-codekatchers/#/",
+        background: "awesome-profile-cards.png"
+      },
+      {
+        title: "Gext",
+        subtitle: "Platform made with React that allows you to create documents from templates, automatically changing the text or image fields to customize it to your needs.",
+        hrefCode: "https://github.com/Adalab/easley-s4-gext",
+        hrefProject: "https://gext.es/#/",
+        background: "gext.png"
+      },
+      {
         title: "Code crushers",
         subtitle: "Collaborative web presentation of a team using HTML5, CSS3, Grid, Sass, Gulp, responsive design...",
         hrefCode: "https://github.com/Adalab/e-s1-codecrushers",
         hrefProject: "http://beta.adalab.es/e-s1-codecrushers/",
         background: "code-crushers.png"
-      },
-      {
-        title: "TV series searcher",
-        subtitle: "SWA made with JavaScript",
-        hrefCode:
-          "https://github.com/albahniuk/e-s2-evaluacion-final-albahniuk",
-        hrefProject: "https://albahniuk.github.io/e-s2-evaluacion-final-albahniuk/",
-        background: "tv-series-searcher.png"
       },
       {
         title: "Harry potter characters searcher",
@@ -68,18 +74,12 @@ export default {
         background: "pokedex.png"
       },
       {
-        title: "Awesome profile-cards",
-        subtitle: "Interactive web application made with React that allows you to create a personalized business card",
-        hrefCode: "https://github.com/Adalab/easley-s3-codekatchers",
-        hrefProject: "http://beta.adalab.es/easley-s3-codekatchers/#/",
-        background: "awesome-profile-cards.png"
-      },
-      {
-        title: "Gext",
-        subtitle: "Platform made with React that allows you to create documents from templates, automatically changing the text or image fields to customize it to your needs.",
-        hrefCode: "https://github.com/Adalab/easley-s4-gext",
-        hrefProject: "https://gext.es/#/",
-        background: "gext.png"
+        title: "TV series searcher",
+        subtitle: "SWA made with JavaScript",
+        hrefCode:
+          "https://github.com/albahniuk/e-s2-evaluacion-final-albahniuk",
+        hrefProject: "https://albahniuk.github.io/e-s2-evaluacion-final-albahniuk/",
+        background: "tv-series-searcher.png"
       }
     ],
   }),
