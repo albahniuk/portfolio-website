@@ -76,7 +76,7 @@ export default {
     experience: [
       {
         color: "rgba(190,118,23,.8)",
-        year: "Mar 2019 - Now",
+        year: "Mar 2019 - Present",
         title: "Front-End developer | NFQ",
         text: "Development of WebApps for financial solutions. Use of Angular2+, Vue, HLML5, CSS3, material design, SCRUM methodology, development of e2e tests..."
       },
