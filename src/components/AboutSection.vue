@@ -20,7 +20,7 @@
               <br />I've never stopped engaging my passion to help others and solve problems, before as sociologist and now as web developer.
               <br />I am passionate about building user‑friendly experiences, paying attention to detail. I enjoy turning complex problems into simple, keeping learning and continue challenging myself.
               <br />I’m fast learner and self-sufficient. Among the tools I work with are responsibility, empathy and great adaptive capacity.
-              <br />When I'm not coding, you'll find me traveling, cooking (and eating), enjoying time with family and friends, reading a book or watching TV series.
+              <br />When I'm not coding, you'll find me traveling, eating pizza or spending time on Netflix.
             </p>
             <a
               v-for="(link, i) in contact"
