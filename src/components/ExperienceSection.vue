@@ -109,22 +109,12 @@ h2 {
   font-size: 26px;
   position: relative;
 }
-h2:after {
- display: block;
-   content: '';
-  width: 58px;
-  height: 4px;
-  background: black;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-}
 .v-card__subtitle {
   text-align: left;
 }
 
 #experience {
-  padding-top: 70px;
+  padding: 70px 22px 0 22px;
 }
 
 </style>

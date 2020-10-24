@@ -1,10 +1,6 @@
 <template>
   <v-container>
     <v-row id="contact">
-      <v-img style="position: relative; width: 100%"
-        :src="require('../assets/contact-image.png')"
-        height="140"
-      /> 
       <v-card shaped class="mb-10 card-container">
         <v-col cols="12">
           <h2 class="display-2 mb-5">Contact</h2>
@@ -95,21 +91,14 @@ h2 {
   font-size: 26px;
   position: relative;
 }
-h2:after {
- display: block;
-   content: '';
-  width: 58px;
-  height: 4px;
-  background: black;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-}
 .v-card__subtitle {
   text-align: left;
 }
 #contact button {
   color: white;
+}
+#contact {
+  padding: 0 22px;
 }
 #contact button i {
   margin-right: 5px;

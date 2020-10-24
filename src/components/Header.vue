@@ -1,17 +1,9 @@
 <template>
 <div>
   <v-app-bar
-    absolute
-    color="#fcb69f"
-    dark
-    shrink-on-scroll
-    src="../assets/background-header.jpg"
-    scroll-target="#scrolling-techniques-2"
+    color="white"
+    fixed
   >
-    <template v-slot:img="{ props }">
-      <v-img v-bind="props" gradient="to top right, rgba(173,140,106,.5), rgba(173,140,106,.8)"></v-img>
-    </template>
-
     <v-app-bar-nav-icon @click.stop="drawer = !drawer" class="d-lg-none"></v-app-bar-nav-icon>
     <v-toolbar-title>
       <a href="#top">
@@ -85,5 +77,8 @@ export default {
 a {
   text-decoration: none;
   color: inherit;
+}
+.v-navigation-drawer {
+  position: fixed;
 }
 </style>

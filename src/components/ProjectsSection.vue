@@ -85,21 +85,12 @@ h2 {
   font-size: 26px;
   position: relative;
 }
-h2:after {
- display: block;
-   content: '';
-  width: 58px;
-  height: 4px;
-  background: black;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-}
 .v-card__subtitle {
   text-align: left;
 }
 #projects {
   padding-top: 70px;
+  padding: 0 22px;
 }
 .project-container {
   background-image: linear-gradient(to bottom, #cd954d, #d79f54, #e1a95b, #eab462, #f4be69);  padding: 20px 70px;
