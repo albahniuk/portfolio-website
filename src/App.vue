@@ -88,4 +88,9 @@ export default {
   -moz-transition: all 0.5s ease-out;
   transition: all 0.5s ease-out;
 }
+:root{
+  .v-application {
+      overflow: hidden;
+  }
+}
 </style>
