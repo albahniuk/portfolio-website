@@ -1,7 +1,7 @@
 <template>
   <v-container>
     <v-row id="experience">
-      <v-col class="mb-10" cols="12">
+      <v-col cols="12">
         <v-row justify="center">
           <v-col cols="12" md="6">
             <h2 class="mb-10 display-2">Education</h2>
@@ -13,10 +13,10 @@
                   :style="`color: ${year.color}`"
                 ></span>
                 <div>
-                  <h2
+                  <h3
                     class="headline font-weight-light mb-4"
                     :style="`color: ${year.color}`"
-                  >{{year.title}}</h2>
+                  >{{year.title}}</h3>
                   <div>{{year.text}}</div>
                 </div>
               </v-timeline-item>
@@ -32,10 +32,10 @@
                   :style="`color: ${year.color}`"
                 ></span>
                 <div>
-                  <h2
+                  <h3
                     class="headline font-weight-light mb-4"
                     :style="`color: ${year.color}`"
-                  >{{year.title}}</h2>
+                  >{{year.title}}</h3>
                   <div>{{year.text}}</div>
                 </div>
               </v-timeline-item>
@@ -76,9 +76,9 @@ export default {
     experience: [
       {
         color: "rgba(190,118,23,.8)",
-        year: "Mar 2019 - Now",
+        year: "Mar 2019 - Present",
         title: "Front-End developer | NFQ",
-        text: "NFQ"
+        text: "Development of WebApps for financial solutions. Use of Angular2+, Vue, HLML5, CSS3, material design, SCRUM methodology, development of e2e tests..."
       },
       {
         color: "rgba(190,118,23,.8)",
@@ -107,13 +107,14 @@ export default {
 h2 {
   font-family: "Roboto", sans-serif;
   font-size: 26px;
+  position: relative;
 }
 .v-card__subtitle {
   text-align: left;
 }
 
 #experience {
-  padding-top: 70px;
+  padding: 70px 22px 0 22px;
 }
 
 </style>

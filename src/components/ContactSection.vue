@@ -10,7 +10,7 @@
               <strong>albalopezfolgar@gmail.com</strong>
             </p>
           </v-row>
-          <v-form ref="form" v-model="valid" lazy-validation action="mailto:albalopezfolgar@gmail.com" method="post" enctype="text/plain">
+          <v-form ref="form" v-model="valid" lazy-validation action="https://formspree.io/albalopezfolgar@gmail.com" method="POST">
             <v-row>
               <v-col cols="6">
                 <v-text-field
@@ -18,6 +18,7 @@
                   :rules="nameRules"
                   :counter="20"
                   label="First name"
+                  name="name"
                   prepend-icon="mdi-account"
                   required
                 ></v-text-field>
@@ -28,6 +29,7 @@
                   :rules="emailRules"
                   label="E-mail"
                   prepend-icon="mdi-at"
+                  name="_replyto"
                   required
                 ></v-text-field>
               </v-col>
@@ -37,6 +39,7 @@
                 <v-textarea
                   class="mx-2"
                   label="Message"
+                  name="message"
                   :rules="messageRules"
                   rows="1"
                   prepend-icon="mdi-comment-text"
@@ -44,7 +47,7 @@
                 ></v-textarea>
               </v-col>
             </v-row>
-            <v-btn :disabled="!valid" @click="sendMessage" color="rgba(190,118,23,.8)" rounded>
+            <v-btn :disabled="!valid" @click="sendMessage" color="rgba(190,118,23,.8)" type="submit" rounded>
               <v-icon>mdi-email-send-outline</v-icon>
               Send
               </v-btn>
@@ -77,9 +80,6 @@ export default {
   methods: {
     sendMessage() {
       this.$refs.form.validate();
-      if (this.$refs.form.validate()) {
-        console.log(this.name, this.email, this.message);
-      }
     }
   }
 };
@@ -89,6 +89,7 @@ export default {
 h2 {
   font-family: "Roboto", sans-serif;
   font-size: 26px;
+  position: relative;
 }
 .v-card__subtitle {
   text-align: left;
@@ -96,12 +97,12 @@ h2 {
 #contact button {
   color: white;
 }
+#contact {
+  padding: 0 22px;
+}
 #contact button i {
   margin-right: 5px;
   font-size: 18px;
-}
-#contact {
-  padding-top: 70px;
 }
 .card-container {
   padding: 20px;

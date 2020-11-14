@@ -1,27 +1,20 @@
 <template>
 <div>
   <v-app-bar
-    absolute
-    color="#fcb69f"
-    dark
-    shrink-on-scroll
-    src="../assets/background-header.jpg"
-    scroll-target="#scrolling-techniques-2"
+    color="white"
+    fixed
   >
-    <template v-slot:img="{ props }">
-      <v-img v-bind="props" gradient="to top right, rgba(173,140,106,.5), rgba(173,140,106,.8)"></v-img>
-    </template>
-
     <v-app-bar-nav-icon @click.stop="drawer = !drawer" class="d-lg-none"></v-app-bar-nav-icon>
-
     <v-toolbar-title>
-      <v-img
-        :src="require('../assets/logo.png')"
-        contain
-        height="40"
-        width="40"
-        style="border-radius: 100%"
-      />
+      <a href="#top">
+        <v-img
+          :src="require('../assets/logo.png')"
+          contain
+          height="40"
+          width="40"
+          style="border-radius: 100%"
+        />
+      </a>
       <span>Alba López Folgar</span>
     </v-toolbar-title>
 
@@ -63,7 +56,6 @@ export default {
 };
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .v-btn {
   background-color: none !important;
@@ -81,5 +73,12 @@ export default {
 }
 .v-toolbar__title .v-image {
   margin-right: 10px;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+.v-navigation-drawer {
+  position: fixed;
 }
 </style>
