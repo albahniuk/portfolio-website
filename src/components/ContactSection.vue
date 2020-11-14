@@ -10,7 +10,7 @@
               <strong>albalopezfolgar@gmail.com</strong>
             </p>
           </v-row>
-          <v-form ref="form" v-model="valid" lazy-validation action="https://formspree.io/albalopezfolgar@gmail.com" method="POST">
+          <v-form ref="form" v-model="valid" lazy-validation action="https://formspree.io/f/xzbkvgrz" method="POST">
             <v-row>
               <v-col cols="6">
                 <v-text-field
