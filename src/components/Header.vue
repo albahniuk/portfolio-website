@@ -1,7 +1,7 @@
 <template>
 <div>
   <v-app-bar
-    color="white"
+    color="var(--bgColor)"
     fixed
   >
     <v-app-bar-nav-icon @click.stop="drawer = !drawer" class="d-lg-none"></v-app-bar-nav-icon>
@@ -15,7 +15,6 @@
           style="border-radius: 100%"
         />
       </a>
-      <span>Alba López Folgar</span>
     </v-toolbar-title>
 
     <v-spacer></v-spacer>
@@ -25,9 +24,9 @@
     <v-btn text href="#contact"  class="d-none d-lg-flex">Contact</v-btn>
 
   </v-app-bar>
-  <v-navigation-drawer v-model="drawer" absolute temporary>
+  <v-navigation-drawer v-model="drawer" absolute temporary color="var(--bgColor)">
     <v-list nav dense>
-      <v-list-item-group active-class="orange lighten-3--text text--accent-4">
+      <v-list-item-group>
         <v-list-item href="#about" @click.stop="drawer = !drawer">
           <v-list-item-title>About</v-list-item-title>
         </v-list-item>
@@ -56,10 +55,12 @@ export default {
 };
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 .v-btn {
   background-color: none !important;
   box-shadow: none;
+  color: var(--fontColor) !important;
+  font-family: var(--fontMonospace);
 }
 .theme--dark.v-btn:not(.v-btn--flat):not(.v-btn--text):not(.v-btn--outlined) {
   background-color: none !important;
@@ -80,5 +81,9 @@ a {
 }
 .v-navigation-drawer {
   position: fixed;
+  .v-list-item__title {
+    color: var(--fontColor);
+    font-family: var(--fontMonospace);
+  }
 }
 </style>

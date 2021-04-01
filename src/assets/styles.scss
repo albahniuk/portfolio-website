@@ -1,0 +1,30 @@
+:root {
+    --fontColor: #98c1d9;
+    --lightFontColor: #e2eafc;
+    --bgColor: #272640;
+    --lightBgColor: #363554;
+    --primaryColor: #e9c46a;
+    --lightPrimaryColor: #fdf8e1;
+    --fontMonospace: 'Roboto Mono', monospace;
+    --fontRoboto: 'Roboto', sans-serif;
+}
+
+.v-application {
+    background: var(--bgColor) !important;
+    overflow: hidden;
+}
+
+.v-btn {
+    text-transform: none;
+}
+
+.sectionTitle {
+    font-family: var(--fontRoboto);
+    font-size: 35px;
+    font-weight: 700;
+    color: var(--lightFontColor);
+}
+
+.v-chip .v-chip__content {
+    font-family: var(--fontMonospace);
+}

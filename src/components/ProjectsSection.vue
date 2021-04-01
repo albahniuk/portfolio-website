@@ -1,31 +1,25 @@
 <template>
   <v-container>
-    <v-row id="projects">
-      <v-col class="mb-10">
-        <h2 class="mb-10 display-2">Projects</h2>
-        <v-card elevation="24" max-width="100%" class="mx-auto project">
-          <v-carousel
-            cycle
-            hide-delimiter-background
-            delimiter-icon="mdi-minus"
-            height="300"
-            show-arrows-on-hover
-          >
-            <v-carousel-item v-for="(project, i) in projects" :key="i" >
-              <v-row align="center" justify="center" class="project-container">
-                <div>
-                  <v-card-title class="headline mb-5">{{project.title}}</v-card-title>
-                  <v-card-subtitle>{{project.subtitle}}</v-card-subtitle>
-                  <v-card-actions>
-                    <v-btn text outlined :href="project.hrefCode" target="_blank">Show me the code</v-btn>
-                    <v-btn text outlined :href="project.hrefProject" target="_blank">Take a look</v-btn>
-                    <v-spacer></v-spacer>
-                  </v-card-actions>
-                </div>
-              </v-row>
-            </v-carousel-item>
-          </v-carousel>
-        </v-card>
+    <v-row id="projects" class="mb-10">
+      <v-col>
+        <h2 class="mb-10 sectionTitle">Projects</h2>
+        <div class="projects">
+          <v-card class="project ma-2" color="var(--lightBgColor)" v-for="(project, i) in projects" :key="i" >
+            <div class="preCard">
+              <v-icon color="var(--primaryColor)" class="folderIcon">mdi-folder</v-icon>
+              <v-card-actions>
+                <v-btn text :href="project.hrefCode" target="_blank" color="var(--primaryColor)" class="showBtn">
+                  <v-icon left color="var(--primaryColor)">mdi-github</v-icon>
+                  Show me the code
+                </v-btn>
+              </v-card-actions>
+            </div>
+            <v-card-title class="headline mb-5">
+              {{project.title}}
+            </v-card-title>
+            <v-card-subtitle>{{project.subtitle}}</v-card-subtitle>
+          </v-card>
+        </div>
       </v-col>
     </v-row>
   </v-container>
@@ -79,22 +73,38 @@ export default {
 };
 </script>
 
-<style scoped>
-h2 {
-  font-family: "Roboto", sans-serif;
-  font-size: 26px;
-  position: relative;
-}
+<style scoped lang="scss">
 .v-card__subtitle {
-  text-align: left;
+  color: var(--fontColor) !important;
+}
+.v-card__title {
+  color: var(--lightFontColor) !important;
+  padding-top: 10px;
 }
 #projects {
-  padding-top: 70px;
-  padding: 0 22px;
+  padding: 100px 22px 0px 22px;
 }
-.project-container {
-  background-image: linear-gradient(to bottom, #cd954d, #d79f54, #e1a95b, #eab462, #f4be69);  padding: 20px 70px;
+.projects {
+  display: flex;
+  flex-wrap: wrap;
+}
+.project {
   color: white;
-  height: 100%;
+  height: 280px;
+  width: 300px;
+}
+.preCard {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 20px;
+  padding-top: 20px;
+}
+.folderIcon {
+  font-size: 40px;
+}
+.showBtn {
+  font-family: var(--fontMonospace);
+  font-size: 12px;
 }
 </style>
