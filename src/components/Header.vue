@@ -10,8 +10,8 @@
         <v-img
           :src="require('../assets/logo.png')"
           contain
-          height="40"
-          width="40"
+          height="55"
+          width="55"
           style="border-radius: 100%"
         />
       </a>

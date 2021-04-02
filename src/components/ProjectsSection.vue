@@ -1,7 +1,7 @@
 <template>
   <v-container>
     <v-row id="projects" class="mb-10">
-      <v-col>
+      <v-col cols="12">
         <h2 class="mb-10 sectionTitle">Projects</h2>
         <div class="projects">
           <v-card class="project ma-2" color="var(--lightBgColor)" v-for="(project, i) in projects" :key="i" >

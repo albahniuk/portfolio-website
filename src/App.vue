@@ -1,11 +1,11 @@
 <template>
   <v-app :class="{'sm': $vuetify.breakpoint.smAndDown, 'md': $vuetify.breakpoint.md}">
     <Header />
-    <AboutSection/>
-    <ProjectsSection class="hidden hidden-left" v-infocus="'showElement'"/>
-    <ExperienceSection/>
+    <AboutSection />
+    <ProjectsSection />
+    <ExperienceSection />
     <ContactSection class="hidden hidden-right" v-infocus="'showElement'"/>
-    <v-footer elevation="5" height="60" width="100%" color="var(--bgColor)">
+    <v-footer elevation="5" height="60" width="100%" color="var(--gColor)">
       <div class="footerText">Powered by Coffee <v-icon color="var(--primaryColor)">mdi-coffee</v-icon></div>
       <v-spacer></v-spacer>
       <div class="footerText">&copy; {{ new Date().getFullYear() }} — <strong>Alba López Folgar</strong></div>

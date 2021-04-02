@@ -6,7 +6,7 @@
         <h2 class="mainText">Alba López Folgar.</h2>
         <v-row :style="$vuetify.breakpoint.smAndUp ? 'margin: 0 auto; max-width: 1200px;' : 'margin: auto; max-width: 100%;'">
           <v-col cols="12" sm="6" style="margin: auto">
-            <p class="presentation">A Front-End developer based in Madrid.</p>
+            <p class="presentation">I am a Front-End developer based in Madrid.</p>
             <p class="description">
               <br />I've never stopped engaging my passion to help others and solve problems, before as sociologist and now as web developer.
               <br />I am passionate about building user‑friendly experiences, paying attention to detail. I enjoy turning complex problems into simple, keeping learning and continue challenging myself.
@@ -126,6 +126,10 @@ export default {
       {
         name: "English",
         icon: "mdi-circle-slice-6"
+      },
+      {
+        name: "Netherlands",
+        icon: "mdi-circle-slice-2"
       }
     ],
     contact: [
@@ -163,7 +167,7 @@ export default {
 }
 .mainText {
   font-family: var(--fontRoboto);
-  font-size: 80px;
+  font-size: 70px;
   font-weight: 600;
   position: relative;
   color: var(--lightFontColor);
@@ -171,7 +175,7 @@ export default {
 }
 .presentation {
   color: var(--fontColor);
-  font-size: 50px;
+  font-size: 46px;
   font-weight: 600;
   line-height: 1.1;
 }

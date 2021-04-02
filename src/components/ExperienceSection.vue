@@ -15,7 +15,13 @@
                     <v-card-text>
                       <p class="tabText">{{item.text}} <span v-if="item.place">@{{item.place}}</span></p>
                       <p class="tabYear">{{item.year}}</p>
-                      <p class="tabDescription" v-if="item.description">
+                      <template v-if="item.description && Array.isArray(item.description)">
+                        <p class="tabDescription" v-for="(sentence, index) in item.description" :key="index">
+                          <v-icon left>mdi-chevron-right</v-icon>
+                          {{sentence}}
+                        </p>
+                      </template>
+                      <p class="tabDescription" v-if="item.description && !Array.isArray(item.description)">
                         <v-icon left>mdi-chevron-right</v-icon>
                         {{item.description}}
                       </p>
@@ -37,6 +43,16 @@
                     <v-card-text>
                       <p class="tabText">{{item.title}}</p>
                       <p class="tabYear">{{item.place}}</p>
+                      <template v-if="item.description && Array.isArray(item.description)">
+                        <p class="tabDescription" v-for="(sentence, index) in item.description" :key="index">
+                          <v-icon left>mdi-chevron-right</v-icon>
+                          {{sentence}}
+                        </p>
+                      </template>
+                      <p class="tabDescription" v-if="item.description && !Array.isArray(item.description)">
+                        <v-icon left>mdi-chevron-right</v-icon>
+                        {{item.description}}
+                      </p>
                     </v-card-text>
                   </v-card>
                 </v-tab-item>
@@ -60,7 +76,8 @@ export default {
       {
         year: "Oct 2018 - Feb 2019",
         title: "Intensive Front-End course",
-        place: "Adalab"
+        place: "Adalab",
+        description: "Javascript, HTML5, CSS3, CSS Grid, Flexbox, SASS, Bootstrap, ReactJs..."
       },
       {
         year: "2014 - 2016",
@@ -75,30 +92,50 @@ export default {
     ],
     experience: [
       {
-        year: "Mar 2019 - Present",
+        year: "Sep 2020 - Present",
+        title: "Bosonit",
+        text: "Front-End developer",
+        description: [
+          "Development and maintaning of financial solutions web apps with Vue, HLML5, CSS3, material design, SCRUM methodology",
+          "Development of e2e tests with Cypress",
+          "Development of unit tests",
+          "Documentation with Storybook"
+        ],
+        place: "Bosonit"
+      },
+      {
+        year: "Mar 2019 - Sep 2020",
         title: "NFQ",
         text: "Front-End developer",
-        description: "Development of WebApps for financial solutions. Use of Angular2+, Vue, HLML5, CSS3, material design, SCRUM methodology, development of e2e tests...",
+        description: [
+          "Development and maintaning of financial solutions web apps with Angular2+, Vue, HLML5, CSS3, material design, SCRUM methodology", 
+          "Development of e2e tests with Protractor, Selenium and Cypress",
+          "Documentation with Styleguidist"
+        ],
         place: "NFQ"
       },
       {
         year: "2017",
         title: "Freelance",
         text: "Sociologist",
-        description: "Collaboration in social researches",
+        description: "Collaboration in social researches directed by Tomás Calvo Buezas, Emeritus Professor of Social Anthropology at the Faculty of Political Sciences and Sociology of the UCM and founder of the Center for Studies on Migration and Racism.",
       },
       {
         year: "2015 - 2017",
         title: "Red Acoge",
         text: "Internship and volunteering as sociologist",
-        description: "Collaboration in research and reports carried out in the Social Intervention Area.",
+        description: [
+          "Collaboration in research and reports carried out in the Social Intervention Area.",
+          "Treatment of statistical data, data analysis, field work (in-depth interviews), development of theoretical framework..."
+        ],
         place: "Red Acoge"
       },
       {
         year: "2016",
         title: "Activa Idiomas",
-        text: "Teacher of extracurricular English classes",
-        place: "Activa Idiomas"
+        text: "English teacher",
+        place: "Activa Idiomas",
+        description: "Teacher of after-school English classes in early childhood education"
       }
     ]
   }),
