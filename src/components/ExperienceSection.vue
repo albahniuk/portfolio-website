@@ -5,7 +5,7 @@
         <v-row justify="center">
           <v-col cols="12">
             <h2 class="mb-10 sectionTitle">Experience</h2>
-            <v-tabs vertical v-model="experienceTab">
+            <v-tabs :vertical="!$vuetify.breakpoint.xs" v-model="experienceTab" show-arrows>        
               <v-tab v-for="(item, i) in experience" :key="i">
                 {{ item.title }}
               </v-tab>
@@ -15,34 +15,6 @@
                     <v-card-text>
                       <p class="tabText">{{item.text}} <span v-if="item.place">@{{item.place}}</span></p>
                       <p class="tabYear">{{item.year}}</p>
-                      <template v-if="item.description && Array.isArray(item.description)">
-                        <p class="tabDescription" v-for="(sentence, index) in item.description" :key="index">
-                          <v-icon left>mdi-chevron-right</v-icon>
-                          {{sentence}}
-                        </p>
-                      </template>
-                      <p class="tabDescription" v-if="item.description && !Array.isArray(item.description)">
-                        <v-icon left>mdi-chevron-right</v-icon>
-                        {{item.description}}
-                      </p>
-                    </v-card-text>
-                  </v-card>
-                </v-tab-item>
-              </v-tabs-items>
-            </v-tabs>
-          </v-col>
-          <v-col cols="12" class="mt-10">
-            <h2 class="mb-10 sectionTitle">Education</h2>
-            <v-tabs vertical v-model="educationTab">
-              <v-tab v-for="(item, i) in training" :key="i">
-                {{ item.year }}
-              </v-tab>
-              <v-tabs-items v-model="educationTab">
-                <v-tab-item v-for="(item, i) in training" :key="i">
-                  <v-card flat>
-                    <v-card-text>
-                      <p class="tabText">{{item.title}}</p>
-                      <p class="tabYear">{{item.place}}</p>
                       <template v-if="item.description && Array.isArray(item.description)">
                         <p class="tabDescription" v-for="(sentence, index) in item.description" :key="index">
                           <v-icon left>mdi-chevron-right</v-icon>
@@ -70,26 +42,7 @@ export default {
   name: "ExperienceSection",
 
   data: () => ({
-    educationTab: 0,
     experienceTab: 0,
-    training: [
-      {
-        year: "Oct 2018 - Feb 2019",
-        title: "Intensive Front-End course",
-        place: "Adalab",
-        description: "Javascript, HTML5, CSS3, CSS Grid, Flexbox, SASS, Bootstrap, ReactJs..."
-      },
-      {
-        year: "2014 - 2016",
-        title: "Master degree in applied sociology: social issues",
-        place: "Universidad Complutense de Madrid"
-      },
-      {
-        year: "2010 - 2014",
-        title: "Sociology degree",
-        place: "Universidad Complutense de Madrid"
-      }
-    ],
     experience: [
       {
         year: "Sep 2020 - Present",
@@ -169,6 +122,9 @@ export default {
   }
 }
 ::v-deep {
+  .v-tabs i {
+    color: var(--primaryColor);
+  }
   .v-card__text {
     color: var(--fontColor) !important;
   }

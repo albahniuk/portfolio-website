@@ -4,9 +4,16 @@
       <v-col cols="12" style="padding: 0;">
         <p class="welcomeMsg">Hi, my name is</p>
         <h2 class="mainText">Alba López Folgar.</h2>
-        <v-row :style="$vuetify.breakpoint.smAndUp ? 'margin: 0 auto; max-width: 1200px;' : 'margin: auto; max-width: 100%;'">
+        <v-row class="flex-wrap-reverse">
           <v-col cols="12" sm="6" style="margin: auto">
             <p class="presentation">I am a Front-End developer based in Madrid.</p>
+            <v-img
+                :src="require('../assets/profile.png')"
+                class="my-3 profileImage"
+                contain
+                :height="260"
+                v-if="$vuetify.breakpoint.xs"
+              />
             <p class="description">
               <br />I've never stopped engaging my passion to help others and solve problems, before as sociologist and now as web developer.
               <br />I am passionate about building user‑friendly experiences, paying attention to detail. I enjoy turning complex problems into simple, keeping learning and continue challenging myself.
@@ -22,12 +29,12 @@
               <v-icon color="var(--primaryColor)">{{link.icon}}</v-icon>
             </a>
           </v-col>
-          <v-col cols="12" sm="6" class="imageContainer">
+          <v-col cols="12" sm="6" class="imageContainer" v-if="!$vuetify.breakpoint.xs">
               <v-img
                 :src="require('../assets/profile.png')"
-                class="my-3"
+                class="my-3 profileImage"
                 contain
-                :height="$vuetify.breakpoint.xs ? 260 : 320"
+                :height="320"
                 width="350"
               />
           </v-col>
@@ -164,6 +171,7 @@ export default {
   font-family: var(--fontMonospace);
   line-height: 1.1;
   font-size: 20px;
+  padding-left: 12px;
 }
 .mainText {
   font-family: var(--fontRoboto);
@@ -172,18 +180,24 @@ export default {
   position: relative;
   color: var(--lightFontColor);
   line-height: 1.1;
+  padding-left: 12px;
 }
 .presentation {
   color: var(--fontColor);
   font-size: 46px;
   font-weight: 600;
   line-height: 1.1;
+  padding: 0 12px;
 }
-.sm .mainText, .sm .presentation {
+.sm .mainText {
   font-size: 40px;
+}
+.sm .presentation {
+  font-size: 30px;
 }
 .description {
   color: var(--fontColor);
+  padding-left: 12px;
 }
 @media (max-width: 960px) {
   .description {
@@ -199,7 +213,7 @@ a {
   text-decoration: none;
 }
 #about {
-  padding-top: 200px;
+  padding: 200px 22px 0 22px;
 }
 .skillsContainer {
   margin-top: 40px;

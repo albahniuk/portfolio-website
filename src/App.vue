@@ -5,7 +5,7 @@
     <ProjectsSection />
     <ExperienceSection />
     <ContactSection class="hidden hidden-right" v-infocus="'showElement'"/>
-    <v-footer elevation="5" height="60" width="100%" color="var(--gColor)">
+    <v-footer elevation="5" height="60" width="100%" color="var(--lightBgColor)" class="mt-10">
       <div class="footerText">Powered by Coffee <v-icon color="var(--primaryColor)">mdi-coffee</v-icon></div>
       <v-spacer></v-spacer>
       <div class="footerText">&copy; {{ new Date().getFullYear() }} — <strong>Alba López Folgar</strong></div>

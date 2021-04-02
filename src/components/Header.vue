@@ -20,7 +20,7 @@
     <v-spacer></v-spacer>
     <v-btn text href="#about" class="d-none d-lg-flex">About</v-btn>
     <v-btn text href="#projects"  class="d-none d-lg-flex">Projects</v-btn>
-    <v-btn text href="#experience"  class="d-none d-lg-flex">Education and experience</v-btn>
+    <v-btn text href="#experience"  class="d-none d-lg-flex">Experience</v-btn>
     <v-btn text href="#contact"  class="d-none d-lg-flex">Contact</v-btn>
 
   </v-app-bar>
@@ -34,7 +34,7 @@
           <v-list-item-title>Projects</v-list-item-title>
         </v-list-item>
         <v-list-item href="#experience" @click.stop="drawer = !drawer">
-          <v-list-item-title >Education and experience</v-list-item-title>
+          <v-list-item-title >Experience</v-list-item-title>
         </v-list-item>
         <v-list-item href="#contact" @click.stop="drawer = !drawer">
           <v-list-item-title>Contact</v-list-item-title>

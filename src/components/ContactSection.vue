@@ -12,7 +12,7 @@
           </v-row>
           <v-form ref="form" v-model="valid" lazy-validation action="https://formspree.io/f/xzbkvgrz" method="POST">
             <v-row>
-              <v-col cols="6">
+              <v-col cols="12" sm="6">
                 <v-text-field
                   v-model="name"
                   :rules="nameRules"
@@ -23,7 +23,7 @@
                   required
                 ></v-text-field>
               </v-col>
-              <v-col cols="6">
+              <v-col cols="12" sm="6">
                 <v-text-field
                   v-model="email"
                   :rules="emailRules"

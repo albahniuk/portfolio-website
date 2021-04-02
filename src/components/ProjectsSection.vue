@@ -87,11 +87,21 @@ export default {
 .projects {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 }
 .project {
   color: white;
   height: 280px;
   width: 300px;
+  border: 1px solid var(--lightBgColor);
+  transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1) 0s, opacity 0.5s cubic-bezier(0.645, 0.045, 0.355, 1) 0s, transform 0.25s cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
+  &:hover {
+    transform: translateY(-7px);
+    border-color: var(--primaryColor) !important;
+    .v-card__title {
+      color: var(--primaryColor) !important;
+    }
+  }
 }
 .preCard {
   display: flex;
