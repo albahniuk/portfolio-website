@@ -77,7 +77,6 @@
 <script>
 export default {
   name: "AboutSection",
-
   data: () => ({
     skills: [
       {

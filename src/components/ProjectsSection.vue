@@ -28,7 +28,6 @@
 <script>
 export default {
   name: "ProjectsSection",
-
   data: () => ({
     projects: [
       {

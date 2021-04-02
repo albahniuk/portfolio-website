@@ -40,7 +40,6 @@
 <script>
 export default {
   name: "ExperienceSection",
-
   data: () => ({
     experienceTab: 0,
     experience: [

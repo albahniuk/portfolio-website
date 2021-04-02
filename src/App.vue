@@ -1,7 +1,9 @@
 <template>
   <v-app :class="{'sm': $vuetify.breakpoint.smAndDown, 'md': $vuetify.breakpoint.md}">
     <Header />
-    <AboutSection />
+    <transition name="fade" appear>
+      <AboutSection />
+    </transition>
     <ProjectsSection />
     <ExperienceSection />
     <ContactSection class="hidden hidden-right" v-infocus="'showElement'"/>
@@ -23,7 +25,6 @@ import ContactSection from './components/ContactSection';
 
 export default {
   name: 'App',
-
   components: {
     Header,
     AboutSection,
@@ -31,10 +32,6 @@ export default {
     ExperienceSection,
     ContactSection
   },
-
-  data: () => ({
-    //
-  }),
   directives: {
     infocus: {
       isLiteral: true,
