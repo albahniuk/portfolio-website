@@ -13,7 +13,7 @@
             <transition name="presentation" appear>
               <p class="presentation">I am a Front-End developer based in Madrid.</p>
             </transition>
-            <transition name="description" appear>
+            <transition name="presentation" appear>
               <v-img
                 :src="require('../assets/profile.png')"
                 class="my-3 profileImage"
@@ -21,11 +21,15 @@
                 :height="260"
                 v-if="$vuetify.breakpoint.xs"
               />
+            </transition>
+            <transition name="description" appear>
               <p class="description">
                 <br />I've never stopped engaging my passion to help others and solve problems, before as sociologist and now as web developer.
                 <br />I am passionate about building user‑friendly experiences, paying attention to detail. I enjoy turning complex problems into simple, keeping learning and continue challenging myself.
                 <br />When I'm not coding, you'll find me traveling, eating pizza, laughing at some memes or spending time on Netflix.
               </p>
+            </transition>
+            <transition-group name="description" tag="a" appear >
               <a
                 v-for="(link, i) in contact"
                 :key="i"
@@ -35,7 +39,7 @@
               >
                 <v-icon color="var(--primaryColor)">{{link.icon}}</v-icon>
               </a>
-            </transition>
+            </transition-group>
           </v-col>
           <transition name="description" appear>
             <v-col cols="12" sm="6" class="imageContainer" v-if="!$vuetify.breakpoint.xs">
