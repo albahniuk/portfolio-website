@@ -8,10 +8,13 @@
             <div class="preCard">
               <v-icon color="var(--primaryColor)" class="folderIcon">mdi-folder</v-icon>
               <v-card-actions>
-                <v-btn text :href="project.hrefCode" target="_blank" color="var(--primaryColor)" class="showBtn">
+                <v-btn text :href="project.hrefCode" target="_blank" color="var(--primaryColor)" class="showBtn" icon>
                   <v-icon left color="var(--primaryColor)">mdi-github</v-icon>
-                  Show me the code
                 </v-btn>
+                <v-btn text :href="project.hrefProject" target="_blank" color="var(--primaryColor)" class="showBtn" icon>
+                  <v-icon left color="var(--primaryColor)">mdi-open-in-new</v-icon>
+                </v-btn>
+                
               </v-card-actions>
             </div>
             <v-card-title class="headline mb-5">
@@ -32,33 +35,33 @@ export default {
     projects: [
       {
         title: "Awesome profile-cards",
-        subtitle: "Interactive web application made with React that allows you to create a personalized business card",
-        hrefCode: "https://github.com/Adalab/easley-s3-codekatchers",
-        hrefProject: "http://beta.adalab.es/easley-s3-codekatchers/#/",
+        subtitle: "Interactive web application made with React that allows you to create a personalized business card.",
+        hrefCode: "https://github.com/albahniuk/easley-s3-codekatchers",
+        hrefProject: "https://albahniuk.github.io/easley-s3-codekatchers/#/",
       },
       {
         title: "Gext",
         subtitle: "Platform made with React that allows you to create documents from templates, automatically changing the text or image fields to customize it to your needs.",
-        hrefCode: "https://github.com/Adalab/easley-s4-gext",
+        hrefCode: "https://github.com/albahniuk/easley-s4-gext",
         hrefProject: "https://gext.es/#/",
       },
       {
         title: "Code crushers",
-        subtitle: "Collaborative web presentation of a team using HTML5, CSS3, Grid, Sass, Gulp, responsive design...",
-        hrefCode: "https://github.com/Adalab/e-s1-codecrushers",
-        hrefProject: "http://beta.adalab.es/e-s1-codecrushers/",
+        subtitle: "Collaborative web presentation of a team using HTML5, CSS3, Sass, responsive design",
+        hrefCode: "https://github.com/albahniuk/e-s1-codecrushers",
+        hrefProject: "https://albahniuk.github.io/e-s1-codecrushers/",
       },
       {
         title: "Harry potter characters searcher",
         subtitle: "SWA made with React",
-        hrefCode: "https://github.com/Adalab/e-s3-evaluacion-final-albahniuk",
-        hrefProject: "http://beta.adalab.es/e-s3-evaluacion-final-albahniuk/#/",
+        hrefCode: "https://github.com/albahniuk/e-s3-evaluacion-final-albahniuk",
+        hrefProject: "https://albahniuk.github.io/e-s3-evaluacion-final-albahniuk/#/",
       },
       {
         title: "Pokédex",
         subtitle: "SWA made with React",
         hrefCode: "https://github.com/albahniuk/f-online-pokemon-albahniuk",
-        hrefProject: "http://beta.adalab.es/f-online-pokemon-albahniuk/",
+        hrefProject: "https://albahniuk.github.io/f-online-pokemon-albahniuk/",
       },
       {
         title: "TV series searcher",

@@ -4,7 +4,7 @@
     color="var(--bgColor)"
     fixed
   >
-    <v-app-bar-nav-icon @click.stop="drawer = !drawer" class="d-lg-none"></v-app-bar-nav-icon>
+    <v-app-bar-nav-icon @click.stop="drawer = !drawer" class="d-md-none"></v-app-bar-nav-icon>
     <v-toolbar-title>
       <a href="#top">
         <v-img
@@ -18,10 +18,18 @@
     </v-toolbar-title>
 
     <v-spacer></v-spacer>
-    <v-btn text href="#about" class="d-none d-lg-flex">About</v-btn>
-    <v-btn text href="#projects"  class="d-none d-lg-flex">Projects</v-btn>
-    <v-btn text href="#experience"  class="d-none d-lg-flex">Experience</v-btn>
-    <v-btn text href="#contact"  class="d-none d-lg-flex">Contact</v-btn>
+    <transition name="about" appear>
+      <v-btn text href="#about" class="d-none d-md-flex">About</v-btn>
+    </transition>
+    <transition name="projects" appear>
+      <v-btn text href="#projects"  class="d-none d-md-flex">Projects</v-btn>
+    </transition>
+    <transition name="experience" appear>
+      <v-btn text href="#experience"  class="d-none d-md-flex">Experience</v-btn>
+    </transition>
+    <transition name="contact" appear>
+      <v-btn text href="#contact"  class="d-none d-md-flex">Contact</v-btn>
+    </transition>
 
   </v-app-bar>
   <v-navigation-drawer v-model="drawer" absolute temporary color="var(--bgColor)">
@@ -56,6 +64,24 @@ export default {
 </script>
 
 <style scoped lang="scss">
+.about-enter, .about-leave-to,
+.projects-enter, .projects-leave-to,
+.experience-enter, .experience-leave-to,
+.contact-enter, .contact-leave-to {
+  opacity: 0;
+}
+.about-enter-active, .about-leave-active {
+  transition: opacity 1s ease-in .5s;
+}
+.projects-enter-active, .projects-leave-active {
+  transition: opacity 1s ease-in 1s;
+}
+.experience-enter-active, .experience-leave-active {
+  transition: opacity 1s ease-in 1.5s;
+}
+.contact-enter-active, .contact-leave-active {
+  transition: opacity 1s ease-in 2s;
+}
 .v-btn {
   background-color: none !important;
   box-shadow: none;

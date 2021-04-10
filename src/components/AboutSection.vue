@@ -2,72 +2,84 @@
   <v-container>
     <v-row id="about">
       <v-col cols="12" style="padding: 0;">
-        <p class="welcomeMsg">Hi, my name is</p>
-        <h2 class="mainText">Alba López Folgar.</h2>
+        <transition name="welcome" appear>
+          <p class="welcomeMsg">Hi, my name is</p>
+        </transition>
+        <transition name="title" appear>
+          <h2 class="mainText">Alba López Folgar.</h2>
+        </transition>
         <v-row class="flex-wrap-reverse">
           <v-col cols="12" sm="6" style="margin: auto">
-            <p class="presentation">I am a Front-End developer based in Madrid.</p>
-            <v-img
+            <transition name="presentation" appear>
+              <p class="presentation">I am a Front-End developer based in Madrid.</p>
+            </transition>
+            <transition name="description" appear>
+              <v-img
                 :src="require('../assets/profile.png')"
                 class="my-3 profileImage"
                 contain
                 :height="260"
                 v-if="$vuetify.breakpoint.xs"
               />
-            <p class="description">
-              <br />I've never stopped engaging my passion to help others and solve problems, before as sociologist and now as web developer.
-              <br />I am passionate about building user‑friendly experiences, paying attention to detail. I enjoy turning complex problems into simple, keeping learning and continue challenging myself.
-              <br />When I'm not coding, you'll find me traveling, eating pizza, laughing at some memes or spending time on Netflix.
-            </p>
-            <a
-              v-for="(link, i) in contact"
-              :key="i"
-              :href="link.href"
-              class="subheading mx-3"
-              target="_blank"
-            >
-              <v-icon color="var(--primaryColor)">{{link.icon}}</v-icon>
-            </a>
+              <p class="description">
+                <br />I've never stopped engaging my passion to help others and solve problems, before as sociologist and now as web developer.
+                <br />I am passionate about building user‑friendly experiences, paying attention to detail. I enjoy turning complex problems into simple, keeping learning and continue challenging myself.
+                <br />When I'm not coding, you'll find me traveling, eating pizza, laughing at some memes or spending time on Netflix.
+              </p>
+              <a
+                v-for="(link, i) in contact"
+                :key="i"
+                :href="link.href"
+                class="subheading mx-3"
+                target="_blank"
+              >
+                <v-icon color="var(--primaryColor)">{{link.icon}}</v-icon>
+              </a>
+            </transition>
           </v-col>
-          <v-col cols="12" sm="6" class="imageContainer" v-if="!$vuetify.breakpoint.xs">
-              <v-img
-                :src="require('../assets/profile.png')"
-                class="my-3 profileImage"
-                contain
-                :height="320"
-                width="350"
-              />
-          </v-col>
+          <transition name="description" appear>
+            <v-col cols="12" sm="6" class="imageContainer" v-if="!$vuetify.breakpoint.xs">
+                <v-img
+                  :src="require('../assets/profile.png')"
+                  class="my-3 profileImage"
+                  contain
+                  :height="320"
+                  width="350"
+                />
+            </v-col>
+          </transition>
         </v-row>
         <v-row>
-          <v-card class="skillsContainer">
-            <v-col cols="12" class="skills">
-                <v-chip
-                  class="ma-2"
-                  color="var(--lightBgColor)"
-                  text-color="var(--primaryColor)"
-                  v-for="skill in skills" :key="skill.name"
-                >
-                  <v-avatar left>
-                    <v-icon>{{skill.icon}}</v-icon>
-                  </v-avatar>
-                  {{ skill.name }}
-                </v-chip>
-            </v-col>
-            <v-col class="mb-10" cols="6">
-                <v-chip
-                  class="ma-2"
-                  color="var(--lightBgColor)"
-                  text-color="var(--primaryColor)"
-                  v-for="language in languages" :key="language.name"
-                >
-                  <v-avatar left>
-                    <v-icon>{{language.icon}}</v-icon>
-                  </v-avatar>
-                  {{ language.name }}
-                </v-chip>
-            </v-col>
-          </v-card>
+          <transition name="skills" appear>
+            <v-card class="skillsContainer">
+              <v-col cols="12" class="skills">
+                  <v-chip
+                    class="ma-2"
+                    color="var(--lightBgColor)"
+                    text-color="var(--primaryColor)"
+                    v-for="skill in skills" :key="skill.name"
+                  >
+                    <v-avatar left>
+                      <v-icon>{{skill.icon}}</v-icon>
+                    </v-avatar>
+                    {{ skill.name }}
+                  </v-chip>
+              </v-col>
+              <v-col class="mb-10" cols="6">
+                  <v-chip
+                    class="ma-2"
+                    color="var(--lightBgColor)"
+                    text-color="var(--primaryColor)"
+                    v-for="language in languages" :key="language.name"
+                  >
+                    <v-avatar left>
+                      <v-icon>{{language.icon}}</v-icon>
+                    </v-avatar>
+                    {{ language.name }}
+                  </v-chip>
+              </v-col>
+            </v-card>
+          </transition>
         </v-row>
       </v-col>
     </v-row>
@@ -92,7 +104,7 @@ export default {
         icon: "mdi-sass"
       },
       {
-        name: "JavaScript",
+        name: "JavaScript (ES6+)",
         icon: "mdi-language-javascript"
       },
       {
@@ -116,8 +128,8 @@ export default {
         icon: "mdi-bootstrap"
       },
       {
-        name: "Material design",
-        icon: "mdi-material-design"
+        name: "Vuetify",
+        icon: "mdi-vuetify"
       }
     ],
     languages: [
@@ -133,10 +145,6 @@ export default {
         name: "English",
         icon: "mdi-circle-slice-6"
       },
-      {
-        name: "Netherlands",
-        icon: "mdi-circle-slice-2"
-      }
     ],
     contact: [
       {
@@ -171,6 +179,28 @@ export default {
   line-height: 1.1;
   font-size: 20px;
   padding-left: 12px;
+}
+.welcome-enter, .welcome-leave-to, 
+.title-enter, .title-leave-to, 
+.presentation-enter, .presentation-leave-to,
+.description-enter, .description-leave-to,
+.skills-enter, .skills-leave-to {
+  opacity: 0;
+}
+.welcome-enter-active, .welcome-leave-active {
+  transition: opacity 1s ease-in .5s;
+}
+.title-enter-active, .title-leave-active {
+  transition: opacity 1s ease-in 1s;
+}
+.presentation-enter-active, .presentation-leave-active {
+  transition: opacity 1s ease-in 1.5s;
+}
+.description-enter-active, .description-leave-active {
+  transition: opacity 1s ease-in 2s;
+}
+.skills-enter-active, .skills-leave-active {
+  transition: opacity 1s ease-in 2.5s;
 }
 .mainText {
   font-family: var(--fontRoboto);
@@ -213,6 +243,11 @@ a {
 }
 #about {
   padding: 200px 22px 0 22px;
+}
+@media (max-width: 600px) {
+  #about {
+  padding: 100px 22px 0 22px;
+}
 }
 .skillsContainer {
   margin-top: 40px;

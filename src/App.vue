@@ -1,9 +1,7 @@
 <template>
   <v-app :class="{'sm': $vuetify.breakpoint.smAndDown, 'md': $vuetify.breakpoint.md}">
     <Header />
-    <transition name="fade" appear>
-      <AboutSection />
-    </transition>
+    <AboutSection />
     <ProjectsSection />
     <ExperienceSection />
     <ContactSection class="hidden hidden-right" v-infocus="'showElement'"/>

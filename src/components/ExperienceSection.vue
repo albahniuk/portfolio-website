@@ -48,9 +48,9 @@ export default {
         title: "Bosonit",
         text: "Front-End developer",
         description: [
-          "Development and maintaning of financial solutions web apps with Vue, HLML5, CSS3, material design, SCRUM methodology",
+          "Development and maintaning of financial solutions web apps with Vue, HLML5, CSS3, Vuetify, SCRUM methodology",
           "Development of e2e tests with Cypress",
-          "Development of unit tests",
+          "Development of unit tests with Jest",
           "Documentation with Storybook"
         ],
         place: "Bosonit"
@@ -60,7 +60,7 @@ export default {
         title: "NFQ",
         text: "Front-End developer",
         description: [
-          "Development and maintaning of financial solutions web apps with Angular2+, Vue, HLML5, CSS3, material design, SCRUM methodology", 
+          "Development and maintaning of financial solutions web apps with Angular2+, Angular material, HLML5, CSS3, Vue, Vuetify, SCRUM methodology", 
           "Development of e2e tests with Protractor, Selenium and Cypress",
           "Documentation with Styleguidist"
         ],

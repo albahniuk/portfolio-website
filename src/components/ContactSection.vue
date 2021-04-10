@@ -103,6 +103,12 @@ export default {
       color: var(--fontColor);
     }
   }
+  .theme--light.v-input input, .theme--light.v-input textarea, .theme--light.v-counter {
+    color: var(--fontColor);
+  }
+  .theme--light.v-text-field > .v-input__control > .v-input__slot:before {
+    border-color: var(--fontColor);
+  }
 }
 #contact {
   padding: 100px 22px 0px 22px;
