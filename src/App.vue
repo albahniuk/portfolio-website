@@ -1,19 +1,14 @@
 <template>
-  <v-app>
+  <v-app :class="{'sm': $vuetify.breakpoint.smAndDown, 'md': $vuetify.breakpoint.md}">
     <Header />
-    <AboutSection/>
-    <ProjectsSection style="margin: 0 auto; max-width: 1200px;" class="hidden hidden-left" v-infocus="'showElement'"/>
-    <ExperienceSection style="margin: 0 auto; max-width: 1200px;"/>
-    <v-parallax height="140"
-      dark
-      src="@/assets/contact-image.png"
-    >
-    </v-parallax>
-    <ContactSection style="margin: 0 auto; max-width: 1200px;" class="hidden hidden-right" v-infocus="'showElement'"/>
-    <v-footer elevation="5" height="60" width="100%">
-      <div>Powered by Coffee <v-icon color="rgba(190,118,23,.8)">mdi-coffee</v-icon></div>
+    <AboutSection />
+    <ProjectsSection />
+    <ExperienceSection />
+    <ContactSection class="hidden hidden-right" v-infocus="'showElement'"/>
+    <v-footer elevation="5" height="60" width="100%" color="var(--lightBgColor)" class="mt-10">
+      <div class="footerText">Powered by Coffee <v-icon color="var(--primaryColor)">mdi-coffee</v-icon></div>
       <v-spacer></v-spacer>
-      <div>&copy; {{ new Date().getFullYear() }} — <strong>Alba López Folgar</strong></div>
+      <div class="footerText">&copy; {{ new Date().getFullYear() }} — <strong>Alba López Folgar</strong></div>
     </v-footer>
   </v-app>
 </template>
@@ -28,7 +23,6 @@ import ContactSection from './components/ContactSection';
 
 export default {
   name: 'App',
-
   components: {
     Header,
     AboutSection,
@@ -36,10 +30,6 @@ export default {
     ExperienceSection,
     ContactSection
   },
-
-  data: () => ({
-    //
-  }),
   directives: {
     infocus: {
       isLiteral: true,
@@ -64,23 +54,22 @@ export default {
   }
 };
 </script>
-<style lang='scss' scoped>
+<style lang='scss'>
+@import "./assets/styles.scss";
 .container {
-  max-width: 100vw;
   padding: 0;
+  margin: 0 auto; 
+  max-width: 1000px;
 }
 .hidden {
   opacity: 0;
 }
-
 .hidden-right {
   transform: translate(50px, 0);
 }
-
 .hidden-left {
   transform: translate(-50px, 0);
 }
-
 .showElement {
   opacity: 1;
   transform: translate(0, 0);
@@ -88,9 +77,11 @@ export default {
   -moz-transition: all 0.5s ease-out;
   transition: all 0.5s ease-out;
 }
-:root{
-  .v-application {
-      overflow: hidden;
+.footerText {
+  color: var(--fontColor);
+  font-family: var(--fontMonospace);
+  strong {
+    color: var(--primaryColor);
   }
 }
 </style>

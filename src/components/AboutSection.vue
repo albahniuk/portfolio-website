@@ -2,31 +2,34 @@
   <v-container>
     <v-row id="about">
       <v-col cols="12" style="padding: 0;">
-        <v-parallax
-          dark
-          src="../assets/background-about.png"
-          :height="$vuetify.breakpoint.xs ? 750 : 550"
-
-        >
-          <h2 class="mb-5 display-2" style="margin: 100px auto; max-width: 1200px;">I'm Alba!</h2>
-          <v-row class="mb-10" :style="$vuetify.breakpoint.smAndUp ? 'margin: 0 auto; max-width: 1200px;' : 'margin: auto; max-width: 100%;'">
-            <v-col cols="12" sm="6" class="about image-container">
-                <v-img
-                  :src="require('../assets/profile.png')"
-                  class="my-3"
-                  contain
-                  :height="$vuetify.breakpoint.xs ? 260 : 320"
-                  width="350"
-                  style="border-radius: 100%"
-                />
-            </v-col>
-            <v-col cols="12" sm="6" style="margin: auto">
-              <p>
-                A Front-End developer based in Madrid.
+        <transition name="welcome" appear>
+          <p class="welcomeMsg">Hi, my name is</p>
+        </transition>
+        <transition name="title" appear>
+          <h2 class="mainText">Alba López Folgar.</h2>
+        </transition>
+        <v-row class="flex-wrap-reverse">
+          <v-col cols="12" sm="6" style="margin: auto">
+            <transition name="presentation" appear>
+              <p class="presentation">I am a Front-End developer based in Madrid.</p>
+            </transition>
+            <transition name="presentation" appear>
+              <v-img
+                :src="require('../assets/profile.png')"
+                class="my-3 profileImage"
+                contain
+                :height="260"
+                v-if="$vuetify.breakpoint.xs"
+              />
+            </transition>
+            <transition name="description" appear>
+              <p class="description">
                 <br />I've never stopped engaging my passion to help others and solve problems, before as sociologist and now as web developer.
                 <br />I am passionate about building user‑friendly experiences, paying attention to detail. I enjoy turning complex problems into simple, keeping learning and continue challenging myself.
                 <br />When I'm not coding, you'll find me traveling, eating pizza, laughing at some memes or spending time on Netflix.
               </p>
+            </transition>
+            <transition-group name="description" tag="a" appear >
               <a
                 v-for="(link, i) in contact"
                 :key="i"
@@ -34,42 +37,53 @@
                 class="subheading mx-3"
                 target="_blank"
               >
-                <v-icon color="#333">{{link.icon}}</v-icon>
+                <v-icon color="var(--primaryColor)">{{link.icon}}</v-icon>
               </a>
+            </transition-group>
+          </v-col>
+          <transition name="description" appear>
+            <v-col cols="12" sm="6" class="imageContainer" v-if="!$vuetify.breakpoint.xs">
+                <v-img
+                  :src="require('../assets/profile.png')"
+                  class="my-3 profileImage"
+                  contain
+                  :height="320"
+                  width="350"
+                />
             </v-col>
-          </v-row>
-        </v-parallax>
+          </transition>
+        </v-row>
         <v-row>
-          <v-card class="card-container" style="margin: 0 auto; max-width: 1200px;">
-            <v-col cols="12">
-                <p class="headline">Skills</p>
-                <v-chip
-                  class="ma-2"
-                  color="rgba(190,118,23,.8)"
-                  text-color="white"
-                  v-for="skill in skills" :key="skill.name"
-                >
-                  <v-avatar left>
-                    <v-icon>{{skill.icon}}</v-icon>
-                  </v-avatar>
-                  {{ skill.name }}
-                </v-chip>
-            </v-col>
-            <v-col class="mb-10" cols="6">
-                <p class="headline">Languages</p>
-                <v-chip
-                  class="ma-2"
-                  color="rgba(190,118,23,.8)"
-                  text-color="white"
-                  v-for="language in languages" :key="language.name"
-                >
-                  <v-avatar left>
-                    <v-icon>{{language.icon}}</v-icon>
-                  </v-avatar>
-                  {{ language.name }}
-                </v-chip>
-            </v-col>
-          </v-card>
+          <transition name="skills" appear>
+            <v-card class="skillsContainer">
+              <v-col cols="12" class="skills">
+                  <v-chip
+                    class="ma-2"
+                    color="var(--lightBgColor)"
+                    text-color="var(--primaryColor)"
+                    v-for="skill in skills" :key="skill.name"
+                  >
+                    <v-avatar left>
+                      <v-icon>{{skill.icon}}</v-icon>
+                    </v-avatar>
+                    {{ skill.name }}
+                  </v-chip>
+              </v-col>
+              <v-col class="mb-10" cols="6">
+                  <v-chip
+                    class="ma-2"
+                    color="var(--lightBgColor)"
+                    text-color="var(--primaryColor)"
+                    v-for="language in languages" :key="language.name"
+                  >
+                    <v-avatar left>
+                      <v-icon>{{language.icon}}</v-icon>
+                    </v-avatar>
+                    {{ language.name }}
+                  </v-chip>
+              </v-col>
+            </v-card>
+          </transition>
         </v-row>
       </v-col>
     </v-row>
@@ -79,7 +93,6 @@
 <script>
 export default {
   name: "AboutSection",
-
   data: () => ({
     skills: [
       {
@@ -95,7 +108,7 @@ export default {
         icon: "mdi-sass"
       },
       {
-        name: "JavaScript",
+        name: "JavaScript (ES6+)",
         icon: "mdi-language-javascript"
       },
       {
@@ -119,8 +132,8 @@ export default {
         icon: "mdi-bootstrap"
       },
       {
-        name: "Material design",
-        icon: "mdi-material-design"
+        name: "Vuetify",
+        icon: "mdi-vuetify"
       }
     ],
     languages: [
@@ -135,7 +148,7 @@ export default {
       {
         name: "English",
         icon: "mdi-circle-slice-6"
-      }
+      },
     ],
     contact: [
       {
@@ -163,37 +176,86 @@ export default {
 };
 </script>
 
-<style scoped>
-.about {
+<style scoped lang="scss">
+.welcomeMsg {
+  color: var(--primaryColor);
+  font-family: var(--fontMonospace);
+  line-height: 1.1;
+  font-size: 20px;
+  padding-left: 12px;
+}
+.welcome-enter, .welcome-leave-to, 
+.title-enter, .title-leave-to, 
+.presentation-enter, .presentation-leave-to,
+.description-enter, .description-leave-to,
+.skills-enter, .skills-leave-to {
+  opacity: 0;
+}
+.welcome-enter-active, .welcome-leave-active {
+  transition: opacity 1s ease-in .5s;
+}
+.title-enter-active, .title-leave-active {
+  transition: opacity 1s ease-in 1s;
+}
+.presentation-enter-active, .presentation-leave-active {
+  transition: opacity 1s ease-in 1.5s;
+}
+.description-enter-active, .description-leave-active {
+  transition: opacity 1s ease-in 2s;
+}
+.skills-enter-active, .skills-leave-active {
+  transition: opacity 1s ease-in 2.5s;
+}
+.mainText {
+  font-family: var(--fontRoboto);
+  font-size: 70px;
+  font-weight: 600;
+  position: relative;
+  color: var(--lightFontColor);
+  line-height: 1.1;
+  padding-left: 12px;
+}
+.presentation {
+  color: var(--fontColor);
+  font-size: 46px;
+  font-weight: 600;
+  line-height: 1.1;
+  padding: 0 12px;
+}
+.sm .mainText {
+  font-size: 40px;
+}
+.sm .presentation {
+  font-size: 30px;
+}
+.description {
+  color: var(--fontColor);
+  padding-left: 12px;
+}
+@media (max-width: 960px) {
+  .description {
+    padding: 0 12px;
+    font-size: 14px;
+  }
+}
+.imageContainer {
   display: flex;
   align-items: center;
 }
 a {
   text-decoration: none;
 }
-h2 {
-  font-family: "Roboto", sans-serif;
-  font-size: 26px;
-  position: relative;
-  color: #333;
-}
-.v-card__subtitle {
-  text-align: left;
-}
 #about {
-  padding-top: 50px;
+  padding: 200px 22px 0 22px;
 }
-.card-container {
-  padding: 20px;
+@media (max-width: 600px) {
+  #about {
+  padding: 100px 22px 0 22px;
+}
+}
+.skillsContainer {
+  margin-top: 40px;
   box-shadow: none;
+  background: transparent !important;
 }
-p {
-  color: #333;
-}
-  @media (max-width: 960px) {
-    p {
-      padding: 0 12px;
-      font-size: 14px;
-    }
-  }
 </style>
