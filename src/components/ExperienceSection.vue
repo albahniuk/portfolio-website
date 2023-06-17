@@ -44,7 +44,18 @@ export default {
     experienceTab: 0,
     experience: [
       {
-        year: "Sep 2020 - Present",
+        year: "Mar 2022 - Present",
+        title: "Secuoyas",
+        text: "Software engineer",
+        description: [
+          "Development and maintaning web apps using React, HLML5, CSS3",
+          "Development of unit tests with Jest and React testing library",
+          "Documentation with Storybook"
+        ],
+        place: "Secuoyas"
+      },
+      {
+        year: "Sep 2020 - Mar 2022",
         title: "Bosonit",
         text: "Front-End developer",
         description: [
