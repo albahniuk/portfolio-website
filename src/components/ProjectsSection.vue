@@ -33,6 +33,12 @@ export default {
   name: "ProjectsSection",
   data: () => ({
     projects: [
+       {
+        title: "Mastermind",
+        subtitle: "The mastermind game made with React.",
+        hrefCode: "https://github.com/albahniuk/mastermind",
+        hrefProject: "https://albahniuk.github.io/mastermind/",
+      },
       {
         title: "Awesome profile-cards",
         subtitle: "Interactive web application made with React that allows you to create a personalized business card.",
