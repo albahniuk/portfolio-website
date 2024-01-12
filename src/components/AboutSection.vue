@@ -11,7 +11,7 @@
         <v-row class="flex-wrap-reverse">
           <v-col cols="12" sm="6" style="margin: auto">
             <transition name="presentation" appear>
-              <p class="presentation">I am a Front-End developer based in Galicia, Spain.</p>
+              <p class="presentation">I am a Front-End developer.</p>
             </transition>
             <transition name="presentation" appear>
               <v-img
@@ -26,7 +26,7 @@
               <p class="description">
                 <br />I've never stopped engaging my passion to help others and solve problems, before as sociologist and now as web developer.
                 <br />I am passionate about building user‑friendly experiences, paying attention to detail. I enjoy turning complex problems into simple, keeping learning and continue challenging myself.
-                <br />When I'm not coding, you'll find me traveling, making some ceramic pieces or watercolor drawings, laughing at some memes, or spending time with some tv series while eating sushi.
+                <br />When I'm not coding, you'll find me traveling, making some ceramic pieces or watercolor drawings, or spending time with some tv series while eating sushi.
               </p>
             </transition>
             <transition-group name="description" tag="a" appear >

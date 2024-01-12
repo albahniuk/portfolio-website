@@ -25,6 +25,14 @@
                         <v-icon left>mdi-chevron-right</v-icon>
                         {{item.description}}
                       </p>
+                      <v-chip
+                        class="ma-2"
+                        color="var(--lightBgColor)"
+                        text-color="var(--primaryColor)"
+                        v-for="element in item.tech" :key="element"
+                      >
+                        {{ element }}
+                      </v-chip>
                     </v-card-text>
                   </v-card>
                 </v-tab-item>
@@ -48,23 +56,27 @@ export default {
         title: "Secuoyas",
         text: "Software engineer",
         description: [
-          "Development and maintaning web apps using React, HLML5, CSS3",
+          "Development and maintaning web apps using React, HLML5, CSS3 for clients as IE university",
           "Development of unit tests with Jest and React testing library",
-          "Documentation with Storybook"
+          "Documentation with Storybook",
+          "Improvement of Core Web Vitals",
         ],
-        place: "Secuoyas"
+        place: "Secuoyas",
+        tech: ["React", "Typescript", "Storybook", "Jest", "Styled components", "HTML5", "CSS3"]
       },
       {
         year: "Sep 2020 - Mar 2022",
         title: "Bosonit",
         text: "Front-End developer",
         description: [
-          "Development and maintaning of financial solutions web apps with Vue, HLML5, CSS3, Vuetify, SCRUM methodology",
+          "Development and maintaning of financial solutions web apps with Vue, HLML5, CSS3, Vuetify and SCRUM methodology.",
           "Development of e2e tests with Cypress",
           "Development of unit tests with Jest",
           "Documentation with Storybook"
         ],
-        place: "Bosonit"
+        place: "Bosonit",
+        tech: ["Vue", "Storybook", "Jest", "Cypress", "Vuetify", "HTML5", "CSS3"]
+
       },
       {
         year: "Mar 2019 - Sep 2020",
@@ -75,7 +87,8 @@ export default {
           "Development of e2e tests with Protractor, Selenium and Cypress",
           "Documentation with Styleguidist"
         ],
-        place: "NFQ"
+        place: "NFQ",
+        tech: ["Angular2+", "Vue", "Styleguidist", "Cypress", "Vuetify", "HTML5", "CSS3"]
       },
       {
         year: "2017",
@@ -150,6 +163,9 @@ export default {
   }
   .v-tabs-items, .v-card {
     background-color: transparent !important;
+  }
+  .v-card {
+    padding-left: 40px !important;
   }
 }
 </style>

@@ -21,11 +21,11 @@
     <transition name="about" appear>
       <v-btn text href="#about" class="d-none d-md-flex">About</v-btn>
     </transition>
-    <transition name="projects" appear>
-      <v-btn text href="#projects"  class="d-none d-md-flex">Projects</v-btn>
-    </transition>
     <transition name="experience" appear>
       <v-btn text href="#experience"  class="d-none d-md-flex">Experience</v-btn>
+    </transition>
+    <transition name="projects" appear>
+      <v-btn text href="#projects"  class="d-none d-md-flex">Projects</v-btn>
     </transition>
     <transition name="contact" appear>
       <v-btn text href="#contact"  class="d-none d-md-flex">Contact</v-btn>
@@ -38,14 +38,14 @@
         <v-list-item href="#about" @click.stop="drawer = !drawer">
           <v-list-item-title>About</v-list-item-title>
         </v-list-item>
-        <v-list-item href="#projects" @click.stop="drawer = !drawer">
-          <v-list-item-title>Projects</v-list-item-title>
-        </v-list-item>
         <v-list-item href="#experience" @click.stop="drawer = !drawer">
           <v-list-item-title >Experience</v-list-item-title>
         </v-list-item>
+        <v-list-item href="#projects" @click.stop="drawer = !drawer">
+          <v-list-item-title>Projects</v-list-item-title>
+        </v-list-item>
         <v-list-item href="#contact" @click.stop="drawer = !drawer">
-          <v-list-item-title>Contact</v-list-item-title>
+          <v-list-item-title>Get in touch</v-list-item-title>
         </v-list-item>
       </v-list-item-group>
     </v-list>
@@ -73,10 +73,10 @@ export default {
 .about-enter-active, .about-leave-active {
   transition: opacity 1s ease-in .5s;
 }
-.projects-enter-active, .projects-leave-active {
+.experience-enter-active, .experience-leave-active {
   transition: opacity 1s ease-in 1s;
 }
-.experience-enter-active, .experience-leave-active {
+.projects-enter-active, .projects-leave-active {
   transition: opacity 1s ease-in 1.5s;
 }
 .contact-enter-active, .contact-leave-active {

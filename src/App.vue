@@ -2,8 +2,8 @@
   <v-app :class="{'sm': $vuetify.breakpoint.smAndDown, 'md': $vuetify.breakpoint.md}">
     <Header />
     <AboutSection />
-    <ProjectsSection />
     <ExperienceSection />
+    <ProjectsSection />
     <ContactSection class="hidden hidden-right" v-infocus="'showElement'"/>
     <v-footer elevation="5" height="60" width="100%" color="var(--lightBgColor)" class="mt-10">
       <div class="footerText">Powered by Coffee <v-icon color="var(--primaryColor)">mdi-coffee</v-icon></div>
